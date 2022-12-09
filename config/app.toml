@@ -1,0 +1,9 @@
+[DATABASES]
+GAMES = 'sqlite+aiosqlite:///var/primary/mount/games.db'
+GAMES_SECONDARY1 = 'sqlite+aiosqlite:///var/secondary1/mount/games.db'
+GAMES_SECONDARY2 = 'sqlite+aiosqlite:///var/secondary2/mount/games.db'
+USERS = 'sqlite+aiosqlite:///database/users.db'
+
+[WORDLE]
+MAX_NUM_ATTEMPTS = 6
+WORDLE_LENGTH = 5
