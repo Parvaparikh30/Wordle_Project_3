@@ -1,12 +1,13 @@
 #!/bin/sh
 
 echo "Initializing databases..."
-python3 ./bin/init_db.py
+echo "Initializing games.db..."
+sqlite3 ./var/primary/mount/games.db < ./share/games.sql
+echo "Initializing users.db..."
+sqlite3 ./var/users.db < ./share/users.sql
 
 echo "Populating Database....."
-sqlite3 ./var/primary/mount/games.db < ./share/games.sql
-sqlite3 ./database/users.db < ./share/users.sql
-
+python3 ./bin/init_db.py
 echo "Finished Initialization and Population."
 
 exit
